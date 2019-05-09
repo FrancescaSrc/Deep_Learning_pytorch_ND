@@ -1,0 +1,5 @@
+{
+	"name": "PyTorch Flower App",
+	"description": "Flower Classifier built using Pytorch",
+	"keywords": ["python", "flask", "pytorch", "bootstrap", "udacity"]
+}

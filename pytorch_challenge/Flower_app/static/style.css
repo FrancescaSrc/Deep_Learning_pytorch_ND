@@ -1,0 +1,32 @@
+h1, h2{
+	margin:20pt;
+	padding: 20px;
+
+
+}
+
+.header{
+	width: 100%;
+	
+
+}
+
+.header.img{
+
+}
+
+img{
+max-width: 100%;
+
+}
+
+
+#flower_foto{
+	width:100%;
+	max-width: 100%;
+}
+
+.hide{
+	display:none;
+
+}

@@ -1,0 +1,82 @@
+<html>
+<head>
+
+	<title>My Flower App</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}" >
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script>
+		function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                let uploaded_img=""
+
+                reader.onload = function (e) {
+                	uploaded_img=e.target.result;
+                    $('#flower')
+                        .attr('src', uploaded_img);
+                    
+                };
+
+                reader.readAsDataURL(input.files[0]);
+                showPrediction();
+
+                
+            }
+        }
+
+        function showPrediction(){
+        	var u_img=document.getElementById("flower").src;
+        	                   
+        	console.log('uploaded_img2')
+        	$('.flower').removeClass('hide');
+        	$('#flower').attr('src', u_img);
+
+
+
+        }
+       
+	</script>
+	
+
+	
+	</head>
+	<body class="text-center">
+		
+
+<div class="container">
+	<div class = "row header">
+		
+	</div>
+<div class="row">
+    <div class="col" id= "input_view">
+    	<h2>This Flower App is built using in Python, Pytorch, Flask</h2>
+
+      <h2>Please upload you flower image. The app will try to predict its name</h2>
+		
+		<form id='flower-input' class="form-inline" method="post" enctype="multipart/form-data">
+			
+			<input type="file" name="file" onchange="readURL(this);" required></br>
+			<input type="submit" value="predict" class="btn btn-primary mb-2" >
+			<input type="reset" onclick="window.location.reload()" value="Reset form" class="btn btn-primary mb-2">
+		</form>
+		
+    </div>
+   <div class="col showPrediction">
+    	<div class="container-fluid">
+		  <h1>Predicted flower image</h1>
+		  <h2 class="flower">Your flower is a {{flower}}</h2>
+		  <img id="flower" src="/static/pytorch.png" alt="your image" /></img>
+		  </div>
+
+		
+
+    
+    </div> -->
+  </div>
+
+
+
+
+</html>
+
